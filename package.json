@@ -1,17 +1,17 @@
 {
   "name": "job-board-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A backend API for job board operations like create, update, and delete users.",
+  "main": "dist/app.js",
   "scripts": {
-    "dev": "node dist/index.js",
+    "dev": "nodemon src/app.ts",
     "build": "tsc",
     "start": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["job-board", "backend", "API", "typescript"],
+  "author": "Viraj",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
