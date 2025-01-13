@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: job-board-backend
+    ports:
+      - "3000:3000"  # Exposing port 3000 for backend app
+    environment:
+      DB_HOST:   # Database service name
+      DB_USER:   # MySQL root user
+      DB_PASSWORD:   # MySQL root password
+      DB_NAME: mydb  # Database name
+    depends_on:
+      - db  # Ensures that MySQL starts before the app
+    networks:
+      - jobboard_network  # Connects to the custom network
+
+  db:
+    image: mysql:8.0  # Using MySQL 8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD:   # Root password for MySQL
+      MYSQL_DATABASE: mydb  # Database to be created on startup
+    ports:
+      - "3307:3306"  # Exposing port 3306 of MySQL to local port 3307
+    networks:
+      - jobboard_network  # Connects to the custom network
+
+networks:
+  jobboard_network:
+    driver: bridge  # Bridge network for both services to communicate
