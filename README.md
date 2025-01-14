@@ -1,12 +1,12 @@
 # Job Board Backend
 
-This project is a backend system for managing job postings, built with Node.js, TypeScript, Express, and PostgreSQL. It provides RESTful APIs for creating, reading, updating, and deleting job postings. The application is designed to be deployed on Render with a PostgreSQL database.
+This project is a backend system for managing job postings, built with Node.js, TypeScript, Express, and MySQL. It provides RESTful APIs for creating, reading, updating, and deleting job postings. The application is designed to be deployed on Render with a MySQL database.
 
 ---
 
 ## Features
 - **CRUD Operations**: Create, Read, Update, and Delete job postings.
-- **Database Integration**: Connects to PostgreSQL for persistent storage.
+- **Database Integration**: Connects to MySQL for persistent storage.
 - **Environment Configuration**: Supports `.env` for secure configuration management.
 - **Swagger API Documentation**: Automatically generates interactive API documentation.
 
@@ -16,7 +16,7 @@ This project is a backend system for managing job postings, built with Node.js, 
 - **Node.js**: JavaScript runtime for backend development.
 - **TypeScript**: Strongly typed superset of JavaScript.
 - **Express**: Web framework for building RESTful APIs.
-- **PostgreSQL**: Relational database for data storage.
+- **MySQL**: Relational database for data storage.
 - **pg**: PostgreSQL client for Node.js.
 - **Swagger**: API documentation generator.
 
@@ -75,14 +75,14 @@ npm run build
 ```bash
 npm start
 ```
-The server will run at `http://localhost:3000` by default.
+The server will run at `http://localhost:3000/api/docs` by default.
 
 ---
 
 ## API Endpoints
 
 ### Base URL
-`http://localhost:3000`
+`http://localhost:3000/api/docs`
 
 ### Endpoints
 
@@ -182,8 +182,8 @@ The server will run at `http://localhost:3000` by default.
 
 ## Deployment to Render
 
-### 1. Set Up a PostgreSQL Database on Render
-- Create a new PostgreSQL instance on Render.
+### 1. Set Up a MySQL Database on Render
+- Create a new MySQL instance on Render.
 - Note the database credentials and update your `.env` file accordingly.
 
 ### 2. Deploy the Application
