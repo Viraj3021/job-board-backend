@@ -59,13 +59,22 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
+// Define a route for the root URL
+app.get('/', (req, res) => {
+  res.send('<h1>Hello Welcome to Job Board!</h1><p>Click here:<br><a href="/api/docs">Here</a></p>');
+});
+
+app.get('/healthz', (req, res) => {
+  res.status(200).send('OK');
+});
+
 // Register job routes
 app.use('/jobs', jobRoutes);
 
-// Add this log to verify that the server is running
+// Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}/api/docs`);
 });
 
 export default app;
